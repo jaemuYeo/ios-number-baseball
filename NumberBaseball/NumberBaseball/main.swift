@@ -43,6 +43,10 @@ func printMenu() {
     print(StringPrintContents.selectMenu, terminator: "")
 }
 
+func printInfo() {
+    print(StringPrintContents.inputManual)
+}
+
 func selectMenu() {
     printMenu()
     guard let input = readLine() else {
