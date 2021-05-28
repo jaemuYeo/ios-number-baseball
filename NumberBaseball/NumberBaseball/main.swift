@@ -38,29 +38,32 @@ func countBallNumber(user: [Int], computer: [Int]) -> Int {
     return count
 }
 
+func printMenu() {
+    print(StringPrintContents.menu)
+    print(StringPrintContents.input, terminator: "")
+}
+
+func selectMenu() {
+    printMenu()
+    guard let input = readLine() else {
+        return
+    }
+    switch input {
+    case "1":
+        startGame()
+    case "2":
+        break
+    default:
+        print(StringPrintContents.inputErrorMessage)
+        selectMenu()
+    }
+}
+
 func startGame() {
-    let computerNumbers = generateRandomNumbers()
-    var userNumbers: [Int]
+    let computer = generateRandomNumbers()
     var chance = 9
     var strike: Int
     var ball: Int
     
-    while chance != 0 {
-        chance -= 1
-        userNumbers = generateRandomNumbers()
-        print("\(StringPrintContents.randomNumber)\(userNumbers[0]) \(userNumbers[1]) \(userNumbers[2])")
-        strike = countStrikeNumber(user: userNumbers, computer: computerNumbers)
-        ball = countBallNumber(user: userNumbers, computer: computerNumbers) - strike
-        if chance < 1 {
-            print("\(StringPrintContents.lose)")
-        }
-        print("\(strike)\(StringPrintContents.strike)\(ball)\(StringPrintContents.ball)")
-        if strike == 3 {
-            print("\(StringPrintContents.win)")
-            break
-        }
-        print("\(StringPrintContents.chance)\(chance)")
-    }
+    
 }
-
-startGame()

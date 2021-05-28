@@ -17,6 +17,7 @@ struct StringPrintContents {
         숫자 3개를 띄어쓰기로 구분하여 입력해주세요.
         중복 숫자는 허용하지 않습니다.
         """
+    static let input = "입력 : "
     static let strike = " 스트라이크, "
     static let ball = " 볼"
     static let win = "사용자승리!!"
