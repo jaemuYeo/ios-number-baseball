@@ -40,7 +40,7 @@ func countBallNumber(user: [Int], computer: [Int]) -> Int {
 
 func printMenu() {
     print(StringPrintContents.menu)
-    print(StringPrintContents.input, terminator: "")
+    print(StringPrintContents.selectMenu, terminator: "")
 }
 
 func selectMenu() {
