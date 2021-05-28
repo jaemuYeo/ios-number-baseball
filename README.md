@@ -24,3 +24,7 @@
 코드 구현 후
 
 <img width="1040" alt="스크린샷 2021-05-28 오전 12 39 18" src="https://user-images.githubusercontent.com/70311145/119856918-0f4d2380-bf4e-11eb-937b-baae72b7519f.png">
+
+### Step2 Flow Chart
+
+<img width="1330" alt="스크린샷 2021-05-28 오후 7 59 16" src="https://user-images.githubusercontent.com/70311145/119978155-437b1f80-bff4-11eb-83fc-bdfd5edd1c91.png">
