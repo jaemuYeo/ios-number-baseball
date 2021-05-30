@@ -95,7 +95,7 @@ func startGame() {
         chance -= 1
         user = userInputNumbers()
         strike = countStrikeNumber(user: user, computer: computer)
-        ball = countBallNumber(user: user, computer: computer)
+        ball = countBallNumber(user: user, computer: computer) - strike
         if chance < 1 {
             print(StringPrintContents.lose)
         }
