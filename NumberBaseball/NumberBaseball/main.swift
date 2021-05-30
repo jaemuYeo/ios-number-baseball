@@ -63,6 +63,27 @@ func selectMenu() {
     }
 }
 
+func userInputNumbers() -> [Int] {
+    print(StringPrintContents.input, terminator: "")
+    
+    guard let inputNumber = readLine() else {
+        print(StringPrintContents.inputErrorMessage)
+        return userInputNumbers()
+    }
+    
+    let input = inputNumber.components(separatedBy: " ").compactMap {
+        Int($0)
+    }
+    let numbers = Set(input)
+    let duplicateRemoved = Array(numbers)
+    
+    guard duplicateRemoved.count == 3 else {
+        print(StringPrintContents.inputErrorMessage)
+        return userInputNumbers()
+    }
+    return duplicateRemoved
+}
+
 func startGame() {
     let computer = generateRandomNumbers()
     var chance = 9
