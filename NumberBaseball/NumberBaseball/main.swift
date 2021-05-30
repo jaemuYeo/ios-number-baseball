@@ -64,6 +64,7 @@ func selectMenu() {
 }
 
 func userInputNumbers() -> [Int] {
+    printInfo()
     print(StringPrintContents.input, terminator: "")
     
     guard let inputNumber = readLine() else {
@@ -96,14 +97,17 @@ func startGame() {
         user = userInputNumbers()
         strike = countStrikeNumber(user: user, computer: computer)
         ball = countBallNumber(user: user, computer: computer) - strike
-        if chance < 1 {
-            print(StringPrintContents.lose)
-        }
         print("\(strike)\(StringPrintContents.strike)\(ball)\(StringPrintContents.ball)")
         if strike == 3 {
             print(StringPrintContents.win)
-            break
+            selectMenu()
         }
         print("\(StringPrintContents.chance)\(chance)")
+        if chance < 1 {
+            print(StringPrintContents.lose)
+            selectMenu()
+        }
     }
 }
+
+selectMenu()
