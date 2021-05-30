@@ -86,9 +86,24 @@ func userInputNumbers() -> [Int] {
 
 func startGame() {
     let computer = generateRandomNumbers()
+    var user: [Int]
     var chance = 9
     var strike: Int
     var ball: Int
     
-    
+    while chance > 0 {
+        chance -= 1
+        user = userInputNumbers()
+        strike = countStrikeNumber(user: user, computer: computer)
+        ball = countBallNumber(user: user, computer: computer)
+        if chance < 1 {
+            print(StringPrintContents.lose)
+        }
+        print("\(strike)\(StringPrintContents.strike)\(ball)\(StringPrintContents.ball)")
+        if strike == 3 {
+            print(StringPrintContents.win)
+            break
+        }
+        print("\(StringPrintContents.chance)\(chance)")
+    }
 }
